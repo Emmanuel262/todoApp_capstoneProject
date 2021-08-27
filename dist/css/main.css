@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+body {
+  font-size: 112.5%;
+  font-family: "Josefin Sans", sans-serif; }
+
+.heading--primary {
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding-top: 0.5rem; }
+
+.i-circle {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fafafa; }
+
+.circle {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  background-color: #d1d1d1;
+  padding: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s; }
+  .circle:hover {
+    background: linear-gradient(105deg, #57ddff, #c058f3); }
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  .container__main {
+    height: 100%; }
+    .container__main--header {
+      height: 40%;
+      background-image: url("../../dist/images/bg-desktop-light.jpg"); }
+    .container__main--footer {
+      height: 60%;
+      flex: 3;
+      background-color: #fafafa; }
+
+.todo {
+  background-color: rgba(255, 166, 0, 0.13);
+  width: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.13);
+  transition: all 0.6s ease-in-out; }
+  .todo__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    height: 100%;
+    align-items: center; }
+    .todo__header img.sun {
+      display: none; }
+  .todo__form {
+    height: 3rem;
+    background-color: #fafafa;
+    border-radius: 0.3rem;
+    margin-bottom: 2rem; }
+    .todo__form .form-group {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      padding: 0.5rem 1rem; }
+      .todo__form .form-group input {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: #161722;
+        background-color: #fafafa;
+        padding: 0.3rem;
+        width: 100%;
+        border: none;
+        outline: none; }
+  .todo__list {
+    background-color: #fafafa;
+    border-radius: 0.3rem; }
+    .todo__list--item {
+      padding: 0.5rem 1rem;
+      display: flex;
+      height: 3rem;
+      font-weight: 400;
+      justify-content: space-between;
+      align-items: center; }
+      .todo__list--item:not(:last-of-type) {
+        border-bottom: 1px solid #ebebeb; }
+      .todo__list--item .list--item {
+        flex: 2;
+        color: #161722;
+        cursor: pointer; }
+      .todo__list--item .circle {
+        margin-right: 2rem; }
+      .todo__list--item .todo__list--close {
+        height: 60%;
+        cursor: pointer;
+        display: none; }
+      .todo__list--item:hover img.todo__list--close {
+        display: block; }
+      .todo__list--item.completed p.list--item {
+        text-decoration: line-through;
+        color: #bebfcb; }
+      .todo__list--item.completed .i-circle {
+        background-image: url("../../dist/images/icon-check.svg");
+        background-image: url("../../dist/images/icon-check.svg"), linear-gradient(135deg, #57ddff, #c058f3);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: center; }
+    .todo__list--footer {
+      font-size: 0.9rem;
+      height: 3rem;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .todo__list--footer .footer__actions {
+        display: flex;
+        justify-content: space-between; }
+        .todo__list--footer .footer__actions p {
+          cursor: pointer; }
+        .todo__list--footer .footer__actions p:not(:last-of-type) {
+          margin-right: 1rem; }
+        .todo__list--footer .footer__actions p.active {
+          color: #3a7bfd;
+          font-weight: 700; }
+      .todo__list--footer .clear--completed {
+        cursor: pointer; }

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <link id="theme-style" rel="stylesheet" href="" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__main">
+        <div class="container__main--header"></div>
+        <div class="container__main--footer"></div>
+      </div>
+      <div class="todo">
+        <div class="todo__header">
+          <h1 class="heading--primary">Todo</h1>
+          <a href="#">
+            <img
+              src="./dist/images/icon-moon.svg"
+              alt="Icon moon"
+              class="todo__header--icon moon"
+              id="todo__header--icon moon"
+            />
+            <img
+              src="./dist/images/icon-sun.svg"
+              alt="Icon moon"
+              class="todo__header--icon sun"
+              id="todo__header--icon sun"
+            />
+          </a>
+        </div>
+        <form class="todo__form">
+          <div class="form-group">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <input type="text" class="form-goup--input" />
+          </div>
+        </form>
+        <div class="todo__list">
+          <div class="todo__list--item completed">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--item">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--item">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--item">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--item">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--item">
+            <div class="circle">
+              <div class="i-circle"></div>
+            </div>
+            <p class="list--item">Jog around the park 3x</p>
+            <img
+              src="./dist/images/icon-cross.svg"
+              alt="Cross icon"
+              class="todo__list--close"
+            />
+          </div>
+          <div class="todo__list--footer">
+            <p class="footer__item--number">
+              <small class="item-number">5</small> items left
+            </p>
+            <div class="footer__actions">
+              <p class="actions--list item--list active">All</p>
+              <p class="actions--list item--active">Active</p>
+              <p class="actions--list item--completed">Completed</p>
+            </div>
+            <p class="clear--completed">Clear Completed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/js/script.js"></script>
+  </body>
+</html>
