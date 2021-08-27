@@ -11,17 +11,34 @@ const form = document.querySelector(".todo__form");
 const completedList = [];
 const activeList = [];
 const allList = [];
+let theme = localStorage.getItem("theme");
+if (theme == null) {
+  setTheme("light");
+} else {
+  setTheme(theme);
+}
+
+function setTheme(mode) {
+  if (mode == "light") {
+    iconClick.classList.add("sun");
+    themeId.href = "./dist/css/main.css";
+    moon.style.display = "block";
+    sun.style.display = "none";
+  }
+  if (mode == "dark") {
+    moon.style.display = "none";
+    sun.style.display = "block";
+    themeId.href = "./dist/css/mainLaout.css";
+  }
+
+  localStorage.setItem("theme", mode);
+}
 
 moon.addEventListener("click", () => {
-  moon.style.display = "none";
-  sun.style.display = "block";
-  themeId.href = "./dist/css/mainLaout.css";
+  setTheme("dark");
 });
 sun.addEventListener("click", () => {
-  iconClick.classList.add("sun");
-  themeId.href = "./dist/css/main.css";
-  moon.style.display = "block";
-  sun.style.display = "none";
+  setTheme("light");
 });
 
 todoList.forEach((list) => {
@@ -38,6 +55,7 @@ const circles = document.querySelectorAll(".circle");
 todoList.forEach((list) => {
   cirBtn = list.querySelectorAll(".circle");
   cirBtn.forEach((btn) => {
+    console.log("clicked");
     btn.addEventListener("click", () => {
       list.classList.toggle("completed");
       if (list.classList.contains("completed")) {
@@ -49,7 +67,6 @@ todoList.forEach((list) => {
       }
     });
   });
-  // console.log(cirBtn);
 });
 
 actionsList.forEach((action) => {
@@ -60,11 +77,11 @@ actionsList.forEach((action) => {
       console.log(activeList);
     } else if (action.classList.contains("item--list")) {
       console.log(allList);
+      allTodoList();
     }
   });
 });
 
-console.log(completedList);
 clearComp.addEventListener("click", () => {
   completedList.length = 0;
   console.log(completedList);
@@ -72,20 +89,56 @@ clearComp.addEventListener("click", () => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  // console.log(inputItem.value);
-  todoListContainer.appendChild(createElement(inputItem));
-  console.log(todoList);
+  todoListContainer.insertBefore(
+    createElement(inputItem.value, false),
+    todoListContainer.firstChild
+  );
+  addTodoList(inputItem.value);
+  inputItem.value = "";
 });
 
-function createElement(input) {
+function addTodoList(input) {
+  const inputArray = JSON.parse(getTodoList("todoItem"));
+  inputArray.push(input);
+  localStorage.setItem("todoItem", JSON.stringify(inputArray));
+}
+
+// function activeTodoList(input) {
+//   localStorage.setItem('activetodoList', JSON.stringify());
+// }
+
+function getTodoListDOM(input) {
+  localStorage.getItem(input);
+}
+
+function allTodoList() {
+  const domtodoList = JSON.parse(getTodoList("todoItem"));
+  domtodoList.forEach((todo) => {
+    todoListContainer.insertBefore(
+      createElement(todo),
+      todoListContainer.firstChild
+    );
+  });
+}
+
+function getTodoList() {
+  return localStorage.getItem("todoItem");
+}
+
+function createElement(input, inn) {
+  let val = "";
+  if (inn === true) {
+    val = input.value;
+  } else {
+    val = input;
+  }
   const divEl = document.createElement("div");
   divEl.classList.add("todo__list--item");
   divEl.innerHTML = `
   <div class="circle">
   <div class="i-circle"></div>
   </div>
-  <p class="list--item">${input.value}</p>
+  <p class="list--item">${input}</p>
   <img
     src="./dist/images/icon-cross.svg"
     alt="Cross icon"
@@ -94,3 +147,5 @@ function createElement(input) {
   `;
   return divEl;
 }
+
+allTodoList();
