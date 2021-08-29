@@ -45,15 +45,15 @@
             />
           </a>
         </div>
-        <form class="todo__form">
+        <form class="todo__form" data-todo-form>
           <div class="form-group">
             <div class="circle">
               <div class="i-circle"></div>
             </div>
-            <input type="text" class="form-goup--input" />
+            <input type="text" data-todo-input class="form-goup--input" />
           </div>
         </form>
-        <div class="todo__list">
+        <div class="todo__list" data-todo-lists-container>
           <div class="todo__list--item completed">
             <div class="circle">
               <div class="i-circle"></div>
@@ -65,75 +65,42 @@
               class="todo__list--close"
             />
           </div>
-          <!-- <div class="todo__list--item">
-            <div class="circle">
-              <div class="i-circle"></div>
-            </div>
-            <p class="list--item">Jog around the park 3x</p>
-            <img
-              src="./dist/images/icon-cross.svg"
-              alt="Cross icon"
-              class="todo__list--close"
-            />
-          </div>
-          <div class="todo__list--item">
-            <div class="circle">
-              <div class="i-circle"></div>
-            </div>
-            <p class="list--item">Jog around the park 3x</p>
-            <img
-              src="./dist/images/icon-cross.svg"
-              alt="Cross icon"
-              class="todo__list--close"
-            />
-          </div>
-          <div class="todo__list--item">
-            <div class="circle">
-              <div class="i-circle"></div>
-            </div>
-            <p class="list--item">Jog around the park 3x</p>
-            <img
-              src="./dist/images/icon-cross.svg"
-              alt="Cross icon"
-              class="todo__list--close"
-            />
-          </div>
-          <div class="todo__list--item">
-            <div class="circle">
-              <div class="i-circle"></div>
-            </div>
-            <p class="list--item">Jog around the park 3x</p>
-            <img
-              src="./dist/images/icon-cross.svg"
-              alt="Cross icon"
-              class="todo__list--close"
-            />
-          </div>
-          <div class="todo__list--item">
-            <div class="circle">
-              <div class="i-circle"></div>
-            </div>
-            <p class="list--item">Jog around the park 3x</p>
-            <img
-              src="./dist/images/icon-cross.svg"
-              alt="Cross icon"
-              class="todo__list--close"
-            />
-          </div> -->
-          <div class="todo__list--footer">
-            <p class="footer__item--number">
-              <small class="item-number">5</small> items left
+        </div>
+        <div class="todo__list--footer">
+          <p class="footer__item--number">
+            <small class="item-number" data-active-number>5</small> left
+          </p>
+          <div class="footer__actions">
+            <p class="actions--list item--list active" data-all-tasks>All</p>
+            <p class="actions--list item--active" data-active-tasks>Active</p>
+            <p class="actions--list item--completed" data-completed-tasks>
+              Completed
             </p>
-            <div class="footer__actions">
-              <p class="actions--list item--list active">All</p>
-              <p class="actions--list item--active">Active</p>
-              <p class="actions--list item--completed">Completed</p>
-            </div>
-            <p class="clear--completed">Clear Completed</p>
           </div>
+          <p class="clear--completed" data-clear-complete-tasks>
+            Clear Completed
+          </p>
+        </div>
+
+        <div class="todo__drag">
+          <p class="todo__drag--btn">Drag and drop to reorder list</p>
         </div>
       </div>
     </div>
+
+    <template id="todo-template">
+      <div class="todo__list--item">
+        <div class="circle">
+          <div class="i-circle"></div>
+        </div>
+        <p class="list--item"></p>
+        <img
+          src="./dist/images/icon-cross.svg"
+          alt="Cross icon"
+          class="todo__list--close"
+        />
+      </div>
+    </template>
     <script src="./dist/js/script.js"></script>
   </body>
 </html>

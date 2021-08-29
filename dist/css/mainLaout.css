@@ -24,7 +24,7 @@
 .todo__form,
 .todo__form .form-group input,
 .todo__list {
-  background-color: hsl(235, 21%, 11%);
+  background-color: hsl(235, 24%, 19%);
   color: hsl(0, 0%, 98%);
 }
 .todo__list--item .list--item {
