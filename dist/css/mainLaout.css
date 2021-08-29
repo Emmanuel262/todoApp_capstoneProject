@@ -23,9 +23,17 @@
 
 .todo__form,
 .todo__form .form-group input,
-.todo__list {
+.todo__list,
+.todo__list--footer {
   background-color: hsl(235, 24%, 19%);
   color: hsl(0, 0%, 98%);
+}
+
+.i-circle {
+  background-color: hsl(235, 24%, 19%);
+}
+.todo__list--item {
+  border-bottom: 0.01px solid hsl(234, 39%, 85%);
 }
 .todo__list--item .list--item {
   color: hsl(0, 0%, 98%);

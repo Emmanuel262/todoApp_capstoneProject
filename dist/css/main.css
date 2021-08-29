@@ -93,7 +93,7 @@ body * {
 
 .todo {
   width: 30rem;
-  margin-top: 7.5rem;
+  margin-top: 5rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -146,8 +146,6 @@ body * {
   font-weight: 400;
   justify-content: space-between;
   align-items: center;
-}
-.todo__list--item:not(:last-of-type) {
   border-bottom: 1px solid #ebebeb;
 }
 .todo__list--item .list--item {
