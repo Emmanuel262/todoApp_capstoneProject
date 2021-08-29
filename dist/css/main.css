@@ -186,6 +186,7 @@ body * {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #fafafa;
 }
 .todo__list--footer .footer__actions {
   display: flex;
